@@ -52,7 +52,7 @@ public class ManageAssignRooms extends javax.swing.JFrame {
                  
                    Connection c = dbcon.getConnection();
 
-                   String sql = "select * from ASSIGNROOMSTOSESSION";
+                   String sql = "select * from ASSIGNROOMS";
 
                    pst = c.prepareStatement(sql);
 
@@ -75,13 +75,13 @@ public class ManageAssignRooms extends javax.swing.JFrame {
 
                         cdata.add(Integer.toString(rs.getInt("ID")));
                         cdata.add(rs.getString("MODULE"));
-                        cdata.add(rs.getString("MODULETAG"));
-                        cdata.add(rs.getString("LECTURER1"));
+                        cdata.add(rs.getString("TAG"));
+                        cdata.add(rs.getString("LECTURER"));
+                        cdata.add(rs.getString("STUDENTGROUP"));
+                        cdata.add(rs.getString("LOCATION"));
                         cdata.add(rs.getString("LECTURER2"));
                         cdata.add(rs.getString("LECTURER3"));
                         cdata.add(rs.getString("LECTURER4"));
-                        cdata.add(rs.getString("STUDENTGROUP"));
-                        cdata.add(rs.getString("LOCATION"));
                         cdata.add(rs.getString("STUDENTSUBGROUP"));
                         
                         //Tablem.addRow(new Object[]{cdata.add(rs.getInt("ID")),cdata.add(rs.getString("Module")),cdata.add(rs.getString("ModuleTag")),cdata.add(rs.getString("Lecturer1")),cdata.add(rs.getString("Lecturer2")),cdata.add(rs.getString("StudentGroup")),cdata.add(rs.getString("Location")),cdata.add(rs.getString("StudentSubgroup"))});
@@ -90,6 +90,12 @@ public class ManageAssignRooms extends javax.swing.JFrame {
 
                 
                }
+                     
+               pst.execute();
+               
+               c.close();
+                     
+                     
 
         } catch (Exception e) {
 
@@ -332,7 +338,7 @@ public class ManageAssignRooms extends javax.swing.JFrame {
         String value = JTable2.getModel().getValueAt(row, 0).toString();
 
       
-        String sql = "Delete from ASSIGNROOMSTOSESSION where ID = " + value;
+        String sql = "Delete from ASSIGNROOMS where ID = " + value;
         
        
         try{

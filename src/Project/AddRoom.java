@@ -304,7 +304,7 @@ public class AddRoom extends javax.swing.JFrame {
                         
                            Connection c = dbcon.getConnection();
                        
-                           String sql = "insert into Location (FACULTY,BUILDING,ROOMNAME,ROOMTYPE,CAPACITY) values(?,?,?,?,?);";
+                           String sql = "insert into Location (FACULTY,BUILDING,ROOMNAME,ROOMTYPE,CAPACITY) values(?,?,?,?,?)";
                        
                             pst = c.prepareStatement(sql);
                       

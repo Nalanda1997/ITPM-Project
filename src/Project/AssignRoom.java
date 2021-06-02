@@ -56,7 +56,7 @@ public class AssignRoom extends javax.swing.JFrame {
              
             try {
 
-                    String sql = "select concat(BUILDING, ROOMNAME,  ROOMTYPE) as Location from Location";
+                    String sql = "select  ROOMNAME as Location from Location";
                     
                     Connection c = dbcon.getConnection();
 
@@ -159,7 +159,7 @@ public class AssignRoom extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel2.setText("Select Module");
 
-        combomodule.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Introduction to Programming", "Software Engineering", "IT Project", "Finance Accounting", "Economics", "Machine Learning", "Computer Networking", "Event Management", "Data Science and Analytics", "General English", "Mobile Application Development", "Object Oriented Programming", "Electrical Engineering " }));
+        combomodule.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Introduction to Programming", "Software Engineering", "DS", "Finance Accounting", "SPM", "Economics", "Machine Learning", "Computer Networking", "ITPM", "EAD", "General English", "Mobile Application Development", "Object Oriented Programming", "Electrical Engineering " }));
         combomodule.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 combomoduleActionPerformed(evt);
@@ -178,7 +178,12 @@ public class AssignRoom extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel6.setText("Lecturer 3 ");
 
-        combolec1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Mr.Jagath Wickramarathne", "Mr.Prasad Jayawardana", "Mrs. Oshadi Gajasinghe", "Mrs. Bhagya Jayasinghe", "Mr.Upul Dias", "Mrs. Sanuki Kariyawasam", "Mr. Dilshika Netthikumarage", "Mr. Ajith Wijesundara", "Mrs. Tharuka Jayawickrama", "Mr. Kelum Perera" }));
+        combolec1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Mr.Jagath Wickramarathne", "Mr.Kamal", "Mr.Vimal", "Mrs.Anna", "Mr. John", "Mr.Joseph" }));
+        combolec1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                combolec1ActionPerformed(evt);
+            }
+        });
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel7.setText("Lecturer 4");
@@ -382,28 +387,10 @@ public class AssignRoom extends javax.swing.JFrame {
         
        
           
-         if(combotag.getSelectedItem().equals("Lecture") || (combotag.getSelectedItem().equals("Tutorial")))
+         if(combotag.getSelectedItem().equals("Lecture") || (combotag.getSelectedItem().equals("Tute")))
          {
                 
                 
-                combosgroup.addItem("Y1.S1.1(IT)");
-                combosgroup.addItem("Y1.S1.2(IT)");
-                combosgroup.addItem("Y1.S2.1(IT)");
-                combosgroup.addItem("Y1.S2.2(IT)");
-                combosgroup.addItem("Y2.S1.1(IT)");
-                combosgroup.addItem("Y2.S1.2(IT)");
-                combosgroup.addItem("Y2.S2.1(IT)");
-                combosgroup.addItem("Y1.S1.1(BM)");
-                combosgroup.addItem("Y2.S2.2(IT)");
-                combosgroup.addItem("Y2.S2.2(CSNE)");
-                combosgroup.addItem("Y3.S1.1(IT)");
-                combosgroup.addItem("Y3.S1.2(IT)");
-                combosgroup.addItem("Y3.S2.1(IT)");
-                combosgroup.addItem("Y3.S2.2(IT)");
-                combosgroup.addItem("Y4.S1.1(IT)");
-                combosgroup.addItem("Y4.S1.1(IT)");
-                combosgroup.addItem("Y4.S2.1(IT)");
-                combosgroup.addItem("Y4.S2.2(IT)");
                 
                 
                 
@@ -413,16 +400,25 @@ public class AssignRoom extends javax.swing.JFrame {
                 
                 combolec4.setEnabled(false);
                 
-                combosgroup.setEnabled(true);
-                combosubgroup.setEnabled(false);
                 
                 
-                
-                
+            combosgroup.addItem("Y1.S1");
+            combosgroup.addItem("Y1.S2");
+            combosgroup.addItem("Y2.S1");
+            combosgroup.addItem("Y2.S2");
+            combosgroup.addItem("Y3.S1");
+            combosgroup.addItem("Y3.S2");
+            combosgroup.addItem("Y4.S1");
+            combosgroup.addItem("Y4.S2");
             
-          }
+            combosgroup.setEnabled(true);
+            combosubgroup.setEnabled(false);
+                
+                
+                
+         }
          
-         else
+         else if(combotag.getSelectedItem().equals("Lab"))
          {
          
             combolec2.setEnabled(true);
@@ -441,23 +437,27 @@ public class AssignRoom extends javax.swing.JFrame {
             
             
             
-            combosubgroup.addItem("Y1.S1.1.1(IT)");
-            combosubgroup.addItem("Y1.S1.2,2(IT)");
-            combosubgroup.addItem("Y1.S2.1.1(IT)");
-            combosubgroup.addItem("Y1.S2.2.2(IT)");
-            combosubgroup.addItem("Y2.S1.1.1(IT)");
-            combosubgroup.addItem("Y2.S1.2.2(IT)");
-            combosubgroup.addItem("Y2.S2.1.1(IT)");
-            combosubgroup.addItem("Y2.S2.2.2(IT)");
-            combosubgroup.addItem("Y2.S2.2.1(CSNE)");
-            combosubgroup.addItem("Y3.S1.1.1(IT)");
-            combosubgroup.addItem("Y3.S1.2.2(IT)");
-            combosubgroup.addItem("Y3.S2.1.1(IT)");
-            combosubgroup.addItem("Y3.S2.2.2(IT)");
-            combosubgroup.addItem("Y4.S1.1.1(IT)");
-            combosubgroup.addItem("Y4.S1.2.2(IT)");
-            combosubgroup.addItem("Y4.S2.1.1(IT)");
-            combosubgroup.addItem("Y4.S2.2.2(IT)");
+            combosubgroup.addItem("Y1.S1.IT.01.1");
+            combosubgroup.addItem("Y1.S1.IT.01.2");
+            combosubgroup.addItem("Y1.S1.IT.01.3");
+            combosubgroup.addItem("Y1.S2.IT.01.1");
+            combosubgroup.addItem("Y1.S2.IT.01.2");
+            combosubgroup.addItem("Y2.S1.CSSE.01.1");
+            combosubgroup.addItem("Y2.S1.CSSE.01.2");
+            combosubgroup.addItem("Y2.S2.CSSE.01.1");
+            combosubgroup.addItem("Y2.S2.CSSE.01.2");
+            combosubgroup.addItem("Y2.S2.CSSE.01.3");
+            combosubgroup.addItem("Y2.S2.CSSE.01.4");
+            combosubgroup.addItem("Y3.S1.IM.01.1");
+            combosubgroup.addItem("Y3.S1.IM.01.2");
+            combosubgroup.addItem("Y3.S2.IM.01.1");
+            combosubgroup.addItem("Y3.S2.IM.01.2");
+            combosubgroup.addItem("Y3.S2.IM.01.3");
+            combosubgroup.addItem("Y4.S1.CSE.01.1");
+            combosubgroup.addItem("Y4.S1.CSE.01.2");
+            combosubgroup.addItem("Y4.S2.CSE.01.1");
+            combosubgroup.addItem("Y4.S2.CSE.01.2");
+            combosubgroup.addItem("Y4.S2.CSE.01.3");
             
             combosubgroup.setEnabled(true);
             combosgroup.setEnabled(false);
@@ -468,7 +468,7 @@ public class AssignRoom extends javax.swing.JFrame {
         
         
         
-        if(combotag.getSelectedItem().equals("Evaluations") && (combomodule.getSelectedItem().equals("IT Project")))
+        if(combotag.getSelectedItem().equals("Evaluations") && (combomodule.getSelectedItem().equals("ITPM")))
         {
             
             
@@ -526,14 +526,14 @@ public class AssignRoom extends javax.swing.JFrame {
         
         
         
-        if((combotag.getSelectedItem().equals("Lecture") || (combotag.getSelectedItem().equals("Tutorial"))))
+        if((combotag.getSelectedItem().equals("Lecture") || (combotag.getSelectedItem().equals("Tute"))))
         {
         
             try {
                 
                     Connection c = dbcon.getConnection();
 
-                    String sql = "insert into ASSIGNROOMSTOSESSION(MODULE,MODULETAG,LECTURER1,STUDENTGROUP,LOCATION) values (?,?,?,?,?)";
+                    String sql = "insert into ASSIGNROOMS(MODULE,TAG,LECTURER,STUDENTGROUP,LOCATION) values (?,?,?,?,?)";
 
                     pst = c.prepareStatement(sql);
             
@@ -563,7 +563,7 @@ public class AssignRoom extends javax.swing.JFrame {
        
             
         }
-        else if((combotag.getSelectedItem().equals("Practical")))
+        else if((combotag.getSelectedItem().equals("Lab")))
         {
             
              try {
@@ -572,7 +572,7 @@ public class AssignRoom extends javax.swing.JFrame {
 
                     
 
-                    String sql = "insert into ASSIGNROOMSTOSESSION(MODULE,MODULETAG,LECTURER1,LECTURER2,LOCATION,STUDENTSUBGROUP) values (?,?,?,?,?,?)";
+                    String sql = "insert into ASSIGNROOMS(MODULE,TAG,LECTURER,LOCATION,LECTURER2,STUDENTSUBGROUP) values (?,?,?,?,?,?)";
 
                     pst = c.prepareStatement(sql);
             
@@ -581,8 +581,8 @@ public class AssignRoom extends javax.swing.JFrame {
                    pst.setString(1,combomodule.getSelectedItem().toString());
                    pst.setString(2, combotag.getSelectedItem().toString()); ;
                    pst.setString(3, combolec1.getSelectedItem().toString());
-                   pst.setString(4, combolec2.getSelectedItem().toString());
-                   pst.setString(5, comboloc.getSelectedItem().toString());
+                   pst.setString(4, comboloc.getSelectedItem().toString());
+                   pst.setString(5, combolec2.getSelectedItem().toString());
                    pst.setString(6, combosubgroup.getSelectedItem().toString());
             
                     
@@ -615,17 +615,17 @@ public class AssignRoom extends javax.swing.JFrame {
 
                     
 
-                    String sql = "insert into ASSIGNROOMSTOSESSION(MODULE,MODULETAG,LECTURER1,LECTURER2,LECTURER3,LECTURER4,LOCATION,STUDENTSUBGROUP) values (?,?,?,?,?,?,?,?)";
+                    String sql = "insert into ASSIGNROOMS(MODULE,TAG,LECTURER,LOCATION,LECTURER2,LECTURER3,LECTURER4,STUDENTSUBGROUP) values (?,?,?,?,?,?,?,?)";
 
                     pst = c.prepareStatement(sql);
             
                    pst.setString(1,combomodule.getSelectedItem().toString());
                    pst.setString(2, combotag.getSelectedItem().toString()); ;
                    pst.setString(3, combolec1.getSelectedItem().toString());
-                   pst.setString(4, combolec2.getSelectedItem().toString());
-                   pst.setString(5, combolec3.getSelectedItem().toString());
-                   pst.setString(6, combolec4.getSelectedItem().toString());
-                   pst.setString(7, comboloc.getSelectedItem().toString());
+                   pst.setString(4, comboloc.getSelectedItem().toString());
+                   pst.setString(5, combolec2.getSelectedItem().toString());
+                   pst.setString(6, combolec3.getSelectedItem().toString());
+                   pst.setString(7, combolec4.getSelectedItem().toString());
                    pst.setString(8, combosubgroup.getSelectedItem().toString());
             
                    JOptionPane.showMessageDialog(this, "Room Assigned Successfully");
@@ -664,40 +664,26 @@ public class AssignRoom extends javax.swing.JFrame {
         
         
         
-      if((combomodule.getSelectedIndex() == 0) || (combomodule.getSelectedIndex() == 1) || (combomodule.getSelectedIndex() == 5) || (combomodule.getSelectedIndex() == 6) || (combomodule.getSelectedIndex() == 8 ) || (combomodule.getSelectedIndex() == 10))
+      if((combomodule.getSelectedIndex() == 0) || (combomodule.getSelectedIndex() == 1) || (combomodule.getSelectedIndex() == 2))
       {
            
            
            combotag.addItem("Lecture");
-           combotag.addItem("Tutorial");
-           combotag.addItem("Practical");
+           combotag.addItem("Tute");
+           combotag.addItem("Lab");
            combotag.removeItem("Evaluations");
        
       }
       
-      
-      else  
-      if((combomodule.getSelectedItem().equals("Economics")) || (combomodule.getSelectedItem().equals("Finance Accounting")) || (combomodule.getSelectedItem().equals("General English")) || (combomodule.getSelectedItem().equals("Event Management")))
-       {
-           
-           combotag.addItem("Lecture");
-           combotag.addItem("Tutorial");
-           combotag.removeItem("Practical");
-           combotag.removeItem("Evaluations");
-           
-           
-           combosgroup.setEnabled(true);
-       
-       }
-      
       else
-      if((combomodule.getSelectedItem().equals("IT Project")))
+      if((combomodule.getSelectedItem().equals("ITPM")))
       {
         
           combotag.addItem("Evaluations");
           combotag.removeItem("Lecture");
-          combotag.removeItem("Practical");
-          combotag.removeItem("Tutorial");
+          combotag.removeItem("Lab");
+          combotag.removeItem("Tute");
+      
       }
       
       
@@ -760,12 +746,12 @@ public class AssignRoom extends javax.swing.JFrame {
     private void btnshowsessionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnshowsessionActionPerformed
        
         
-        if((combotag.getSelectedItem().equals("Lecture") || (combotag.getSelectedItem().equals("Tutorial"))))
+        if((combotag.getSelectedItem().equals("Lecture") || (combotag.getSelectedItem().equals("Tute"))))
         {
                 textases.setText(combomodule.getSelectedItem().toString() + combotag.getSelectedItem().toString() + combolec1.getSelectedItem().toString() + combosgroup.getSelectedItem().toString() + comboloc.getSelectedItem().toString());
         
         }
-        else if(combotag.getSelectedItem().equals("Practical"))
+        else if(combotag.getSelectedItem().equals("Lab"))
         {
         
             textases.setText(combomodule.getSelectedItem().toString() + combotag.getSelectedItem().toString() + combolec1.getSelectedItem().toString() + combolec2.getSelectedItem().toString() + combosubgroup.getSelectedItem().toString() + comboloc.getSelectedItem().toString());
@@ -782,6 +768,10 @@ public class AssignRoom extends javax.swing.JFrame {
         
         
     }//GEN-LAST:event_btnshowsessionActionPerformed
+
+    private void combolec1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_combolec1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_combolec1ActionPerformed
 
     /**
      * @param args the command line arguments

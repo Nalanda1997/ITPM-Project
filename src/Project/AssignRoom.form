@@ -235,20 +235,21 @@
         <Component class="javax.swing.JComboBox" name="combomodule">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="13">
+              <StringArray count="14">
                 <StringItem index="0" value="Introduction to Programming"/>
                 <StringItem index="1" value="Software Engineering"/>
-                <StringItem index="2" value="IT Project"/>
+                <StringItem index="2" value="DS"/>
                 <StringItem index="3" value="Finance Accounting"/>
-                <StringItem index="4" value="Economics"/>
-                <StringItem index="5" value="Machine Learning"/>
-                <StringItem index="6" value="Computer Networking"/>
-                <StringItem index="7" value="Event Management"/>
-                <StringItem index="8" value="Data Science and Analytics"/>
-                <StringItem index="9" value="General English"/>
-                <StringItem index="10" value="Mobile Application Development"/>
-                <StringItem index="11" value="Object Oriented Programming"/>
-                <StringItem index="12" value="Electrical Engineering "/>
+                <StringItem index="4" value="SPM"/>
+                <StringItem index="5" value="Economics"/>
+                <StringItem index="6" value="Machine Learning"/>
+                <StringItem index="7" value="Computer Networking"/>
+                <StringItem index="8" value="ITPM"/>
+                <StringItem index="9" value="EAD"/>
+                <StringItem index="10" value="General English"/>
+                <StringItem index="11" value="Mobile Application Development"/>
+                <StringItem index="12" value="Object Oriented Programming"/>
+                <StringItem index="13" value="Electrical Engineering "/>
               </StringArray>
             </Property>
           </Properties>
@@ -314,20 +315,19 @@
         <Component class="javax.swing.JComboBox" name="combolec1">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="10">
+              <StringArray count="6">
                 <StringItem index="0" value="Mr.Jagath Wickramarathne"/>
-                <StringItem index="1" value="Mr.Prasad Jayawardana"/>
-                <StringItem index="2" value="Mrs. Oshadi Gajasinghe"/>
-                <StringItem index="3" value="Mrs. Bhagya Jayasinghe"/>
-                <StringItem index="4" value="Mr.Upul Dias"/>
-                <StringItem index="5" value="Mrs. Sanuki Kariyawasam"/>
-                <StringItem index="6" value="Mr. Dilshika Netthikumarage"/>
-                <StringItem index="7" value="Mr. Ajith Wijesundara"/>
-                <StringItem index="8" value="Mrs. Tharuka Jayawickrama"/>
-                <StringItem index="9" value="Mr. Kelum Perera"/>
+                <StringItem index="1" value="Mr.Kamal"/>
+                <StringItem index="2" value="Mr.Vimal"/>
+                <StringItem index="3" value="Mrs.Anna"/>
+                <StringItem index="4" value="Mr. John"/>
+                <StringItem index="5" value="Mr.Joseph"/>
               </StringArray>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="combolec1ActionPerformed"/>
+          </Events>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>

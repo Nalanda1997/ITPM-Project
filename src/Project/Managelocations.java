@@ -79,6 +79,10 @@ public class Managelocations extends javax.swing.JFrame {
 
                 
                }
+                
+               pst.execute();
+               
+               c.close();
 
         } catch (Exception e) {
 
